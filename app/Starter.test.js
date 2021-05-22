@@ -1,9 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
-// import { jest } from "@jest/globals";
 
 import AppButton from "./components/AppButton";
-// import AppCard from "./components/AppCard";
 import AppScreen from "./components/AppScreen";
 import AppText from "./components/AppText";
 import AppColors from "./configs/AppColors";
@@ -58,14 +56,6 @@ describe('render custom Button component with style props', ()=> {
     expect(color).toBe(AppColors.primaryColor);
   });
 });
-
-// /**  test rendering of AppCard */
-// describe('Test custom Card component', ()=> {
-//   const testVar = renderer.create(<AppCard title="Test"/>);
-//   it('Should render', ()=> {
-//     expect(testVar.toJSON()).toBeTruthy();
-//   });
-// });
 
 /**  test rendering of AppScreen */
 describe('render AppScreen component', ()=> {
