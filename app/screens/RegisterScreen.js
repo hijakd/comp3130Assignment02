@@ -9,7 +9,7 @@ function RegisterScreen() {
   return (
     <AppScreen>
       <View style={styles.screenContainer}>
-        <View>
+        <View  style={styles.welcomeContainer}>
 
         </View>
       </View>
@@ -21,7 +21,17 @@ const styles = StyleSheet.create({
   screenContainer: {
     margin: 25,
     backgroundColor: AppColors.sandy,
-  }
+  },
+  welcomeContainer: {
+    // backgroundColor: 'red',
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 50,
+  },
+  textInputContainer: {
+    marginTop: 50,
+    marginBottom: 30,
+  },
 });
 
 export default RegisterScreen;
