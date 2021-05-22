@@ -3,6 +3,7 @@ import renderer from "react-test-renderer";
 // import { jest } from "@jest/globals";
 
 import AppButton from "./components/AppButton";
+// import AppCard from "./components/AppCard";
 import AppScreen from "./components/AppScreen";
 import AppText from "./components/AppText";
 import AppColors from "./configs/AppColors";
@@ -20,37 +21,37 @@ test("AppText will render", () => {
 });
 
 /** test rendering of AppText without supplied text */
-test("AppText will render", ()=> {
-  const testVar = renderer.create(<AppText/>).toJSON();
+test("AppText will render with props no text", ()=> {
+  const json = renderer.create(<AppText/>).toJSON();
   // console.log(json.props.style);
-  expect(testVar.props.style[0].fontSize).toBe(20);
-  expect(testVar.props.style[0].fontFamily).toBe("Avenir-Roman");
+  expect(json.props.style[0].fontSize).toBe(20);
+  expect(json.props.style[0].fontFamily).toBe("Avenir-Roman");
 });
 
 /** test rendering of AppText containing supplied text */
-test("AppText will render", ()=> {
-  const testVar = renderer.create(<AppText>Its all Cactus</AppText>).toJSON();
-  expect(testVar.props.style[0].fontSize).toBe(20);
-  expect(testVar.props.style[0].fontFamily).toBe("Avenir-Roman");
-  expect(testVar.children.includes("Its all Cactus"));
+test("AppText will render with props & text", ()=> {
+  const json = renderer.create(<AppText>Its all Cactus</AppText>).toJSON();
+  expect(json.props.style[0].fontSize).toBe(20);
+  expect(json.props.style[0].fontFamily).toBe("Avenir-Roman");
+  expect(json.children.includes("Its all Cactus"));
 });
 
 /**  test rendering of AppButton */
-describe('Test custom Button component', ()=> {
-  const testVar = renderer.create(<AppButton title="Test"/>);
+describe('render custom Button component without style props', ()=> {
+  const wrapper = renderer.create(<AppButton title="Test"/>);
   it('Should render', ()=> {
-    expect(testVar.toJSON()).toBeTruthy();
+    expect(wrapper.toJSON()).toBeTruthy();
   });
 });
 
 /** test rendering of AppButton with style props supplied */
-describe('Test custom Button component', ()=> {
-  const testVar = renderer.create(<AppButton title="Test"/>);
-  const styles = testVar.toJSON().props.style;
+describe('render custom Button component with style props', ()=> {
+  const wrapper = renderer.create(<AppButton title="Test"/>);
+  const styles = wrapper.toJSON().props.style;
   const {title, color, textColor, cellPadding} = styles;
 
   it('Should render', ()=> {
-    expect(testVar.toJSON()).toBeTruthy();
+    expect(wrapper.toJSON()).toBeTruthy();
   });
 
   it('Should have "primaryColor" backgroundColor set', ()=> {
@@ -58,8 +59,24 @@ describe('Test custom Button component', ()=> {
   });
 });
 
+// /**  test rendering of AppCard */
+// describe('Test custom Card component', ()=> {
+//   const testVar = renderer.create(<AppCard title="Test"/>);
+//   it('Should render', ()=> {
+//     expect(testVar.toJSON()).toBeTruthy();
+//   });
+// });
+
+/**  test rendering of AppScreen */
+describe('render AppScreen component', ()=> {
+  const wrapper = renderer.create(<AppScreen/>);
+  it('Should render', ()=> {
+    expect(wrapper.toJSON()).toBeTruthy();
+  });
+});
+
 /** Snapshot of AppScreen component */
-it('renders correctly', ()=> {
+it('Snapshot of AppScreen component', ()=> {
   const tree = renderer.create(<AppScreen/>).toJSON();
   expect(tree).toMatchSnapshot();
 });
