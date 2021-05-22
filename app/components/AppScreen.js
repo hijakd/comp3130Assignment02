@@ -13,7 +13,7 @@ function AppScreen({ children, style }) {
         style={styles.screenBackground}
         blurRadius={blurRadiusValue}
       >
-        {children}
+        {children} 
       </ImageBackground>
     </SafeAreaView>
   );

@@ -6,7 +6,7 @@ import AppStyles from "../configs/AppStyles";
 import AppColors from "../configs/AppColors";
 
 function AppIcon({
-                   name,
+                   name, 
                    size = 40,
                    iconColor = AppColors.primeColor,
                    backgroundColor,

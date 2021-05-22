@@ -16,7 +16,7 @@ function AppButton({title, color="primaryColor", textColor = "white", cellPad = 
 
 const styles = StyleSheet.create({
   button: {
-    width: "100%",
+    width: "100%", 
     justifyContent: "space-around",
     alignItems: "center",
     borderRadius: 20,
