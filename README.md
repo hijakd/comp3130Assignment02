@@ -13,7 +13,7 @@ testingRebuild branch
 
 
 url for published expo project<br>
-https://expo.io/@hijakd/projects/jharydmarhkain_assign01
+https://expo.io/@hijakd/projects/sojourningcactus
 
 "hijakd" / "TheCactus"
 

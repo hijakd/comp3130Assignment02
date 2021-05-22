@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "assignment02b",
-    "slug": "assignment02b",
+    "name": "SojourningCactus",
+    "slug": "sojourningcactus",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -27,6 +27,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "COMP3130 Assignment 02 (Major Deliverable 02)"
   }
 }
